@@ -3,6 +3,8 @@
     "Project": "Project",
     "Analytics": "Analytics",
     "LOGIN": {
-        "SIGN_IN": "Sign A8c Translated"
+        "SIGN_IN": "Entrar",
+        "USER_TITLE": "Usuário",
+        "PASSWORD_TITLE": "Senha"
     }
 }

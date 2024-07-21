@@ -16,6 +16,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { fuseAnimations } from '@fuse/animations';
 import { FuseAlertComponent, FuseAlertType } from '@fuse/components/alert';
+import { Translation, TranslocoModule, TranslocoService } from '@ngneat/transloco';
 import { AuthService } from 'app/core/auth/auth.service';
 
 @Component({
@@ -34,7 +35,7 @@ import { AuthService } from 'app/core/auth/auth.service';
         MatButtonModule,
         MatIconModule,
         MatCheckboxModule,
-        MatProgressSpinnerModule,
+        MatProgressSpinnerModule
     ],
 })
 export class AuthSignInComponent implements OnInit {
@@ -46,6 +47,9 @@ export class AuthSignInComponent implements OnInit {
     };
     signInForm: UntypedFormGroup;
     showAlert: boolean = false;
+    signInTitle = "Sign In Translated";
+    loginTitle = "Email address";
+    passwordTitle = "Password"
 
     /**
      * Constructor
@@ -54,7 +58,8 @@ export class AuthSignInComponent implements OnInit {
         private _activatedRoute: ActivatedRoute,
         private _authService: AuthService,
         private _formBuilder: UntypedFormBuilder,
-        private _router: Router
+        private _router: Router,
+        private _translocoService: TranslocoService
     ) {}
 
     // -----------------------------------------------------------------------------------------------------
@@ -73,6 +78,19 @@ export class AuthSignInComponent implements OnInit {
             ],
             password: ['admin', Validators.required],
             rememberMe: [''],
+        });
+
+        this._translocoService.selectTranslate("LOGIN.SIGN_IN")
+        .subscribe(value => {
+            this.signInTitle = value;
+        });
+        this._translocoService.selectTranslate("LOGIN.USER_TITLE")
+        .subscribe(value => {
+            this.loginTitle = value;
+        });
+        this._translocoService.selectTranslate("LOGIN.PASSWORD_TITLE")
+        .subscribe(value => {
+            this.passwordTitle = value;
         });
     }
 

@@ -57,11 +57,11 @@ export const appConfig: ApplicationConfig = {
                         label: 'English',
                     },
                     {
-                        id: 'tr',
-                        label: 'Turkish',
-                    },
+                        id: 'pt-br',
+                        label: 'Português',
+                    }
                 ],
-                defaultLang: 'en',
+                defaultLang: 'pt-br',
                 fallbackLang: 'en',
                 reRenderOnLangChange: true,
                 prodMode: true,
@@ -90,15 +90,15 @@ export const appConfig: ApplicationConfig = {
                 services: mockApiServices,
             },
             fuse: {
-                layout: 'classy',
-                scheme: 'light',
+                layout: 'modern',
+                scheme: 'dark',
                 screens: {
                     sm: '600px',
                     md: '960px',
                     lg: '1280px',
                     xl: '1440px',
                 },
-                theme: 'theme-default',
+                theme: 'theme-brand',
                 themes: [
                     {
                         id: 'theme-default',
