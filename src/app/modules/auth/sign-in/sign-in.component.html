@@ -22,11 +22,11 @@
                 <!-- Email field -->
                 <mat-form-field class="w-full">
                     <mat-label>{{loginTitle}}</mat-label>
-                    <input id="email" matInput [formControlName]="'email'" />
-                    @if (signInForm.get('email').hasError('required')) {
-                        <mat-error> Email address is required </mat-error>
+                    <input id="login" matInput [formControlName]="'login'" />
+                    @if (signInForm.get('login').hasError('required')) {
+                        <mat-error> login address is required </mat-error>
                     }
-                    @if (signInForm.get('email').hasError('email')) {
+                    @if (signInForm.get('login').hasError('login')) {
                         <mat-error>
                             Please enter a valid email address
                         </mat-error>
