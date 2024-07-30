@@ -1,18 +1,27 @@
 <div class="flex min-w-0 flex-auto flex-col">
     <!-- Main -->
     <div class="flex-auto p-6 sm:p-10">
-        <button mat-flat-button (click)="loadData()">
-            Home
-        </button>
-    </div>
-    <div class="flex-auto p-6 sm:p-10">
+        <table mat-table [dataSource]="products" class="mat-elevation-z8">
+              <ng-container matColumnDef="Name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
+              </ng-container>
+            
+              <ng-container matColumnDef="Price">
+                <th mat-header-cell *matHeaderCellDef> Price </th>
+                <td mat-cell *matCellDef="let element"> {{element.Price | currency: 'BRL'}} </td>
+              </ng-container>
+            
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
         <!-- CONTENT GOES HERE -->
-        <div class="h-400 max-h-400 min-h-400 rounded-2xl border-2 border-dashed border-gray-300">
+        <!-- <div class="min-h-400 rounded-2xl border-2 border-dashed border-gray-300">
             @for (item of products; track item.name) {
                 <li>{{ item.name }}</li>
                 } @empty {
                 <li>There are no items.</li>
                 }
-        </div>
+        </div> -->
     </div>
 </div>
