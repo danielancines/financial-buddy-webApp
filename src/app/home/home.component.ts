@@ -21,14 +21,9 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //this.httpClient.get<any>('https://dummyjson.com/products')
-    const headers = new HttpHeaders({
-      Authorization: `Bearer ${localStorage.getItem("token")}`
-    });
 
-    this.httpClient.get<any[]>('http://api.danielancines.com/api/v1/product', { headers: headers })
+    this.httpClient.get<any[]>('http://api.danielancines.com/api/v1/product')
       .pipe(catchError(error => {
-        //console.log(error);
         return [];
       }))
       .subscribe(products => {
