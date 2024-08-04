@@ -1,0 +1,26 @@
+.container {
+    display: flex; /* Magic starts here, turning your container into a flex container */
+    justify-content: center; /* This centers the child horizontally */
+    align-items: center; /* And this centers it vertically */
+    height: 100vh; /* This will make sure your container is as tall as the entire viewport */
+  }
+
+  .center {
+    width: 40%; /* Set any width you prefer */
+    height: 25%; /* And any height */
+  }
+
+  .login {
+    border-radius: 8px;
+    background-color: #293651;
+  }
+
+  .login-item {
+    margin: auto;
+    margin-top: 10px;
+    width: 70%;
+  }
+
+  .login-button{
+    width: 100%;
+  }

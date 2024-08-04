@@ -1,0 +1,24 @@
+<main class="main">
+    <div class="content ">
+        <table class="table table-sm table-dark table-striped table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Price</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (product of products; track product) {
+                <tr class="product-list-item">
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.description }}</td>
+                    <td>{{ product.prices[0].price | currency:'BRL'}}</td>
+                    <td><button (click)="addPrice()" type="button" class="btn btn-primary">Add Price</button></td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</main>
